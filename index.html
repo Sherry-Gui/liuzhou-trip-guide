@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
-<head>
+<html lang="zh-CN" data-theme="day"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f5efe2">
@@ -31,36 +30,48 @@ main{display:grid;gap:18px;padding-bottom:68px}.card{background:var(--paper);bor
 <main class="wrap">
   <section class="card focus" aria-labelledby="focus-title">
     <div class="label">此刻关注 · <span id="zoneLabel">Asia/Shanghai</span></div>
-    <div class="next-title" id="focus-title">正在计算下一个行程</div>
+    <div class="next-title" id="focus-title">G3742从深圳北发车</div>
     <div class="countdown" aria-live="polite">
-      <div><b id="cdDays">--</b><span>天</span></div><div><b id="cdHours">--</b><span>时</span></div><div><b id="cdMinutes">--</b><span>分</span></div><div><b id="cdSeconds">--</b><span>秒</span></div>
+      <div><b id="cdDays">04</b><span>天</span></div><div><b id="cdHours">01</b><span>时</span></div><div><b id="cdMinutes">56</b><span>分</span></div><div><b id="cdSeconds">42</b><span>秒</span></div>
     </div>
-    <p class="map-note" id="focus-time">所有时间按柳州当地时间计算，跨时区打开也不会偏移。</p>
+    <p class="map-note" id="focus-time">9月25日周五 16:28 · Asia/Shanghai (UTC+8)</p>
   </section>
 
-  <section class="card" aria-labelledby="overview-title">
-    <div class="section-head"><h2 id="overview-title">行程总览地图</h2><p>手绘位置关系图<br>点击日程地点可导航</p></div>
+    <section class="card" aria-labelledby="overview-title">
+    <div class="section-head"><h2 id="overview-title">真实位置总览</h2><p>按高德经纬度等比例绘制<br>点名称可打开标准地图</p></div>
     <div class="mapbox">
       <svg viewBox="0 0 760 455" role="img" aria-labelledby="mapTitle mapDesc">
-        <title id="mapTitle">柳州三段逛吃路线</title><desc id="mapDesc">柳州站、酒店、胜利烧烤城、青云市场、文庙、五星街和谷埠街的位置关系。</desc>
-        <path d="M32 323 C148 285 209 345 304 294 S480 202 725 232" fill="none" stroke="var(--blue)" stroke-width="34" opacity=".18" stroke-linecap="round"/>
-        <path d="M70 365 C172 326 236 330 311 287 S473 213 702 207" fill="none" stroke="var(--line)" stroke-width="3" stroke-dasharray="8 9"/>
-        <path d="M151 345 L270 336 L338 75 L270 336" fill="none" stroke="var(--orange)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M270 336 L425 306 L616 315 L475 309 L498 354 L270 336" fill="none" stroke="var(--green)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M270 336 L409 384 L270 336 L151 345" fill="none" stroke="var(--blue)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-        <g font-size="14" font-weight="700" fill="var(--ink)">
-          <circle cx="151" cy="345" r="9" fill="var(--blue)"/><text x="111" y="374">柳州站</text>
-          <circle cx="270" cy="336" r="12" fill="var(--yellow)" stroke="var(--ink)" stroke-width="2"/><text x="222" y="368">维也纳酒店 · 两晚</text>
-          <circle cx="338" cy="75" r="9" fill="var(--orange)"/><text x="354" y="80">胜利烧烤城</text>
-          <circle cx="425" cy="306" r="9" fill="var(--green)"/><text x="380" y="286">青云市场</text>
-          <circle cx="616" cy="315" r="9" fill="var(--green)"/><text x="624" y="301">柳州文庙</text>
-          <circle cx="475" cy="309" r="9" fill="var(--green)"/><text x="458" y="337">五星街</text>
-          <circle cx="498" cy="354" r="9" fill="var(--green)"/><text x="508" y="377">风情港</text>
-          <circle cx="409" cy="384" r="9" fill="var(--blue)"/><text x="379" y="414">谷埠街</text>
+        <title id="mapTitle">柳州旅行地点真实经纬度位置图</title><desc id="mapDesc">北为胜利烧烤城，南为龙潭公园；柳州站、酒店、青云市场、五星街、风情港和谷埠街集中在市中心。</desc>
+        <defs><pattern id="geoGrid" width="52" height="52" patternUnits="userSpaceOnUse"><path d="M52 0H0V52" fill="none" stroke="var(--line)" stroke-width="1" opacity=".55"></path></pattern></defs>
+        <rect x="18" y="18" width="724" height="419" rx="18" fill="url(#geoGrid)"></rect>
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M325 268 L364 272 L383 65 L364 272" stroke="var(--orange)" stroke-width="6"></path>
+          <path d="M364 272 L389 253 L412 400 L405 259 L410 269 L364 272" stroke="var(--green)" stroke-width="6"></path>
+          <path d="M364 272 L387 284 L325 268" stroke="var(--blue)" stroke-width="6"></path>
         </g>
-        <g font-size="12" fill="var(--muted)"><text x="28" y="28">北 ↑</text><text x="30" y="433">按已核对经纬度绘制；酒店与租车门店待订单截图进一步校准</text></g>
+        <g font-size="13" font-weight="800" fill="var(--ink)">
+          <a href="https://uri.amap.com/marker?position=109.403153,24.356050&amp;name=胜利烧烤城&amp;src=liuzhou-guide&amp;callnative=1"><circle cx="383" cy="65" r="9" fill="var(--orange)"></circle><text x="399" y="70">胜利烧烤城</text></a>
+          <a href="https://uri.amap.com/marker?position=109.415053,24.276710&amp;name=柳州龙潭公园&amp;src=liuzhou-guide&amp;callnative=1"><circle cx="412" cy="400" r="9" fill="var(--green)"></circle><text x="428" y="405">龙潭公园</text></a>
+          <circle cx="369" cy="270" r="26" fill="none" stroke="var(--ink)" stroke-width="2" stroke-dasharray="4 5"></circle><text x="220" y="246">市中心（右侧放大）</text>
+        </g>
+        <g transform="translate(500 272)">
+          <rect width="230" height="145" rx="14" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"></rect>
+          <text x="12" y="20" fill="var(--muted)" font-size="11">市中心等比例放大 · 北 ↑</text>
+          <path d="M6 91 C54 72 112 104 222 70" fill="none" stroke="var(--blue)" stroke-width="12" opacity=".16"></path>
+          <g fill="none" stroke-width="4"><path d="M18 96 L81 103 L112 71" stroke="var(--orange)"></path><path d="M81 103 L136 72 L162 81 L167 98 L136 72" stroke="var(--green)"></path><path d="M81 103 L132 113 L18 96" stroke="var(--blue)"></path></g>
+          <g font-size="10" font-weight="800" fill="var(--ink)">
+            <circle cx="18" cy="96" r="5" fill="var(--blue)"></circle><text x="5" y="118">柳州站</text>
+            <circle cx="81" cy="103" r="6" fill="var(--yellow)" stroke="var(--ink)"></circle><text x="54" y="135">酒店</text>
+            <circle cx="136" cy="72" r="5" fill="var(--green)"></circle><text x="105" y="59">青云</text>
+            <circle cx="162" cy="81" r="5" fill="var(--green)"></circle><text x="158" y="69">五星街</text>
+            <circle cx="167" cy="98" r="5" fill="var(--green)"></circle><text x="173" y="104">风情港</text>
+            <circle cx="132" cy="113" r="5" fill="var(--blue)"></circle><text x="116" y="132">谷埠街</text>
+          </g>
+        </g>
+        <g fill="var(--muted)" font-size="11"><text x="30" y="38">北 ↑</text><text x="30" y="424">点位来源：高德地图公开坐标；酒店按订单地址定位。路线线段仅表示游玩顺序，导航以高德实时道路为准。</text></g>
       </svg>
     </div>
+    <div class="actions"><a class="button primary" href="https://uri.amap.com/marker?markers=109.388016,24.308107,柳州站|109.3982,24.3071,维也纳酒店|109.403153,24.356050,胜利烧烤城|109.408988,24.311663,青云民生市场|109.415053,24.276710,龙潭公园|109.413192,24.310143,五星街|109.4144,24.3077,风情港|109.408370,24.304210,谷埠街&amp;src=liuzhou-guide&amp;callnative=1">在高德查看全部标准点位</a></div>
     <div class="legend"><span><i class="dot" style="background:var(--orange)"></i>抵达夜</span><span><i class="dot" style="background:var(--green)"></i>完整日</span><span><i class="dot" style="background:var(--blue)"></i>返程日</span><span><i class="dot" style="background:var(--yellow)"></i>住宿</span></div>
   </section>
 
@@ -74,50 +85,48 @@ main{display:grid;gap:18px;padding-bottom:68px}.card{background:var(--paper);bor
       <div class="bookings">
         <article class="booking"><div class="booking-top"><h3>🛵 两台电动车</h3><span class="status wait">尚未预订</span></div><p>计划9月25日21:15到站后现场租，9月27日原店归还</p><p>中秋晚间可能缺车或门店提前关门；至少提前保存2家营业到22:00后的门店作为备选。</p></article>
         <article class="booking"><div class="booking-top"><h3>🚄 返程 · 两段车票</h3><span class="status ok">已出票</span></div><p>D3757：9月27日13:47 柳州 → 17:27 广州南</p><p>G9781：17:52 广州南 → 18:21 深圳北</p><p><strong style="color:var(--orange)">广州南仅25分钟换乘；下车立即走便捷换乘，不出站。</strong></p></article>
-        <article class="booking"><div class="booking-top"><h3>🎫 景点门票 / 预约</h3><span class="status wait">尚未购买</span></div><p>目前没有已购门票或预约。柳州文庙等节假日开放规则需出发前再次核对。</p></article>
+        <article class="booking"><div class="booking-top"><h3>🎫 景点门票 / 预约</h3><span class="status wait">尚未购买</span></div><p>龙潭公园免费开放，无需购票；柳州市政府公布日常开放时间为06:30–22:30。中秋临时活动与出入口调整仍需出发前复核。</p></article>
       </div>
     </div>
   </section>
 
   <section class="card" aria-labelledby="food-title">
     <div class="section-head"><h2 id="food-title">两人美食作战单</h2><p>按胃容量排序<br>价格为近期公开内容参考</p></div>
-    <p style="margin:-4px 0 16px;color:var(--muted);font-size:.86rem">四段正餐预计合计 <strong style="color:var(--ink)">¥255–415</strong>。中秋现场价格可能上浮；区间不含伴手礼和茶麸洗头。</p>
+    <p style="margin:-4px 0 16px;color:var(--muted);font-size:.86rem">四段正餐预计合计 <strong style="color:var(--ink)">¥225–355</strong>。中秋现场价格可能上浮；区间不含伴手礼和茶麸洗头。</p>
     <div class="food-grid">
       <article class="food-stop">
-        <div class="food-stop-head"><div><h3>🌙 抵达夜｜胜利烧烤城</h3><div class="food-tags"><span>22:50后</span><span>重口夜宵</span><span>两人分食</span></div></div><span class="budget">约 ¥100–160</span></div>
+        <div class="food-stop-head"><div><h3>🌙 抵达夜｜胜利烧烤城</h3><div class="food-tags"><span>22:50后</span><span>本地夜宵组合</span><span>两人分食</span></div></div><span class="budget">约 ¥90–140</span></div>
         <ol class="order-list">
-          <li><div><span class="dish-name">姐妹老店 · 炒鸭脚 1份</span><span class="dish-note">本轮第一优先。软烂脱骨、紫苏酸笋味明显；到店先点，因为出餐需要时间。</span></div></li>
-          <li><div><span class="dish-name">姐妹老店 · 小份炒螺蛳粉 1份</span><span class="dish-note">两人分，不要各点一盘；可要求少辣。小红书近期攻略推荐，旧评论也有人认为只到“及格”，所以不要追加第二份。</span></div></li>
-          <li><div><span class="dish-name">叮当炒冰 · 牛油果＋芒果双拼 1杯</span><span class="dish-note">点完炒粉后去买，带回姐妹老店一起吃。芭乐连籽打会略有渣，不列首选。</span></div></li>
-          <li><div><span class="dish-name">现切宜州果酱烧烤 · 4–6串</span><span class="dish-note">只有还饿才点：牛肉、牛胸口、泡椒牛肉、爆浆豆腐优先。评论对具体店家分歧较大，认准现切现串再买。</span></div></li>
+          <li><div><span class="dish-name">小卢炒螺 · 小份炒螺蛳粉 1份</span><span class="dish-note">胜利夜市常见的本地夜宵吃法，锅气和酸笋味比“摆盘网红小吃”更重要；两人分一份，要求少辣。</span></div></li>
+          <li><div><span class="dish-name">小卢炒螺 · 炒鸭脚或炒田螺二选一</span><span class="dish-note">炒鸭脚偏软烂酸辣，炒田螺更适合慢慢嗍；不要两个都点，避免和炒粉一起过量。</span></div></li>
+          <li><div><span class="dish-name">四季豆浆 · 原味豆浆 2杯＋油条 1根</span><span class="dish-note">就在夜市一带，用清淡豆浆压住炒粉的辣和油，比继续叠加烧烤更像柳州人的夜宵搭配。</span></div></li>
+          <li><div><span class="dish-name">叮当炒冰 · 芒果或牛油果 1杯</span><span class="dish-note">只选一个口味。炒冰是胜利夜市代表甜口，但第一晚已很晚，排队超过25分钟就放弃。</span></div></li>
         </ol>
-        <div class="food-rule"><strong>点餐上限：</strong>炒鸭脚＋小炒粉＋炒冰已经足够两人。不要再点鸭脚煲、整盘烧烤和第二份主食。</div>
+        <div class="food-rule"><strong>两人照着点：</strong>小炒粉＋炒鸭脚/炒田螺二选一＋两杯豆浆；还有胃口再加一杯炒冰。不点外地夜市通用的飞饼、烤冷面和大盘烧烤。</div>
       </article>
 
       <article class="food-stop">
         <div class="food-stop-head"><div><h3>☀️ 早市尾场｜青云民生市场</h3><div class="food-tags"><span>11:35–12:20</span><span>看到先买</span><span>可能售罄</span></div></div><span class="budget">约 ¥45–75</span></div>
         <ol class="order-list">
-          <li><div><span class="dish-name">张记玉米汁 · 2杯</span><span class="dish-note">近期笔记参考约4元/杯，玉米现榨过筛。进市场看到就先买，不用留到最后。</span></div></li>
-          <li><div><span class="dish-name">潘姐粉饺 · 三拼 1份</span><span class="dish-note">Q弹米皮配蒜香酸辣酱，两人分吃。比单点一大份糯米饭更适合继续扫摊。</span></div></li>
-          <li><div><span class="dish-name">桂姐糯米饭 · 双拼 1份</span><span class="dish-note">选粉蒸肉＋腊肠，配绿豆蓉；属于饱腹核心，两人只买一份。</span></div></li>
-          <li><div><span class="dish-name">香滑芝麻糊 · 芝麻花生双拼 1碗</span><span class="dish-note">近期小红书评论口碑相对稳定。本地人会端小凳直接吃，适合甜口收尾。</span></div></li>
-          <li><div><span class="dish-name">符老三露水汤圆 · 1碗，可选</span><span class="dish-note">咸馅、粘米皮，和普通甜汤圆不同。11点后可能没开或卖完；遇到再吃，不为它死等。</span></div></li>
-          <li><div><span class="dish-name">卓和记猪肉脯 · 最多买1片</span><span class="dish-note">公开笔记参考约55元/斤，评论明显两极分化；只尝一片，不买大袋。</span></div></li>
+          <li><div><span class="dish-name">张记回头客玉米汁 · 2杯</span><span class="dish-note">现榨过筛，热饮可选有糖或无糖。11点后先买它，卖完就不在市场里来回找。</span></div></li>
+          <li><div><span class="dish-name">桂姐小吃 · 糯米饭或露水汤圆二选一</span><span class="dish-note">糯米饭选粉蒸肉＋腊肠；露水汤圆是咸肉馅粘米皮。两样都吃会太顶，留胃给下午。</span></div></li>
+          <li><div><span class="dish-name">十八婶 · 芝麻花生糊 1碗</span><span class="dish-note">手工糊是青云市场更稳定的老派甜口，两人共享一碗；若摊位已收档，直接跳过。</span></div></li>
+          <li><div><span class="dish-name">潘家豆粉馍 · 2个</span><span class="dish-note">黄豆粉香、甜度低，属于广西市场型小吃。买到现做的再吃，冷硬的不要勉强打卡。</span></div></li>
+          <li><div><span class="dish-name">杨嫂豆花 · 三拼 1碗，作为替补</span><span class="dish-note">豆花＋糯玉米＋槐花粉。前面摊位售罄时再选，不与芝麻糊同时点。</span></div></li>
         </ol>
-        <div class="food-rule"><strong>尾场策略：</strong>玉米汁 → 粉饺 → 糯米饭 → 芝麻糊；符老三和猪肉脯按库存决定。12:20必须离开，不因排队拖垮下午行程。</div>
+        <div class="food-rule"><strong>11点尾场策略：</strong>玉米汁 → 桂姐二选一 → 芝麻糊/豆花二选一 → 豆粉馍。12:20离场；青云是菜市场，不要为了凑“网红全套”拖延去龙潭公园。</div>
       </article>
 
       <article class="food-stop">
         <div class="food-stop-head"><div><h3>🌆 主力逛吃｜五星街＋金鱼巷</h3><div class="food-tags"><span>17:00开始</span><span>一碗主食</span><span>甜咸交替</span></div></div><span class="budget">约 ¥80–130</span></div>
         <ol class="order-list">
-          <li><div><span class="dish-name">主食二选一，只点1碗</span><span class="dish-note"><strong>A：</strong>六品坊招牌螺蛳粉＋蛋＋鸭脚，近期小红书参考22元，汤粉评价更高。<strong>B：</strong>文惠桥头大华干捞粉，酱汁偏咸甜；抖音常推荐，也有小红书测评认为一般。想稳妥选A，想吃干捞选B。</span></div></li>
-          <li><div><span class="dish-name">张飞 · 椰奶木薯羹 1碗</span><span class="dish-note">近期实测参考9元，木薯软糯、椰奶解辣，属于五星街最稳的甜品之一。</span></div></li>
-          <li><div><span class="dish-name">点都得 · 蜜汁鸭腿 1只＋粉利</span><span class="dish-note">两人分一只，尽量等刚出锅。抖音回访提到出品偶有波动，鸭腿不酥时不必排长队。</span></div></li>
-          <li><div><span class="dish-name">螺蛳臭豆腐 · 小份 1份</span><span class="dish-note">近期笔记参考12元，小颗臭豆腐压进螺蛳汤里更吸汁；已经很辣就跳过。</span></div></li>
-          <li><div><span class="dish-name">杨姐深巷酸 · 青芒果或萝卜酸 1小盒</span><span class="dish-note">在粉和鸭腿之间吃，负责解腻；选择一种即可，不买大盒。</span></div></li>
-          <li><div><span class="dish-name">蒙记深夜豆浆 · 仅作22:30后备选</span><span class="dish-note">如果看完喷泉又饿，再点半糖豆浆＋蛋散；当天已经吃撑就取消，不为了打卡专程绕路。</span></div></li>
+          <li><div><span class="dish-name">文惠桥头大华干捞粉 · 2两＋卤蛋 1个</span><span class="dish-note">柳州老牌干捞：碎肉、花生、蒜和辣油拌粉，分量偏小。它和深圳常见汤粉不是一路味道，作为本轮主食。</span></div></li>
+          <li><div><span class="dish-name">杨姐深巷酸 · 青芒果或萝卜酸 1小盒</span><span class="dish-note">广西酸嘢负责解腻，只选一种。先试味再决定辣椒盐放多少。</span></div></li>
+          <li><div><span class="dish-name">张飞 / 韦韦木薯糖水 · 木薯羹 1碗</span><span class="dish-note">木薯软糯、甜汤解辣。哪家顺路且排队短就吃哪家，不为同类糖水重复排队。</span></div></li>
+          <li><div><span class="dish-name">金团子 · 糯米糍 2个</span><span class="dish-note">选奶油芋泥或当日现做口味，一人一个。属于本地糯叽叽糕点，比跨城也能吃到的连锁小吃更值得。</span></div></li>
+          <li><div><span class="dish-name">蒙记老牌豆浆 · 22:30后再决定</span><span class="dish-note">看完喷泉重新饿了，再点半糖豆浆＋油条/蛋散；当天吃饱就取消，不专程硬塞。</span></div></li>
         </ol>
-        <div class="food-rule"><strong>建议顺序：</strong>主食 → 木薯羹 → 茶麸洗头 → 鸭腿 → 酸嘢 → 臭豆腐 → 江边喷泉。第一晚已经吃过炒冰，五星街不重复。</div>
+        <div class="food-rule"><strong>建议顺序：</strong>大华干捞 → 杨姐酸嘢 → 茶麸洗头 → 木薯糖水 → 金团子 → 江边喷泉。已删除不够柳州本地的跨城连锁小吃。</div>
       </article>
 
       <article class="food-stop">
@@ -135,37 +144,37 @@ main{display:grid;gap:18px;padding-bottom:68px}.card{background:var(--paper);bor
     <div class="section-head"><h2 id="daily-title">逐日行程</h2><p>左边时间 · 右边行动</p></div>
     <article class="card day">
       <header><h3>Day 1 · 抵达夜</h3><div class="sub">9月25日 周五｜21:15到站 → 现场租车 → 酒店 → 胜利烧烤城</div></header>
-      <details class="route"><summary>展开当日路线地图 <span>⌄</span></summary><div class="route-content"><div class="mapbox"><svg viewBox="0 0 700 180"><path d="M75 96 C175 35 275 140 365 91 S535 44 625 84" fill="none" stroke="var(--orange)" stroke-width="8" stroke-linecap="round" stroke-dasharray="1 14"/><g fill="var(--paper)" stroke="var(--orange)" stroke-width="5"><circle cx="75" cy="96" r="12"/><circle cx="250" cy="106" r="12"/><circle cx="625" cy="84" r="12"/></g><g fill="var(--ink)" font-size="14" font-weight="700"><text x="42" y="132">柳州站</text><text x="208" y="142">维也纳酒店</text><text x="574" y="120">胜利烧烤城</text></g></svg></div><div class="actions"><a class="button primary" data-multipoints="1" href="#">在高德打开全天点位</a></div></div></details>
+      <details class="route"><summary>展开真实位置图 <span>⌄</span></summary><div class="route-content"><div class="mapbox"><svg viewBox="0 0 700 215" role="img" aria-label="抵达夜真实经纬度路线"><defs><pattern id="d1grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="var(--line)" opacity=".6"></path></pattern></defs><rect width="700" height="215" fill="url(#d1grid)"></rect><path d="M100 174 L250 178 L330 38" fill="none" stroke="var(--orange)" stroke-width="6"></path><g fill="var(--paper)" stroke="var(--orange)" stroke-width="4"><circle cx="100" cy="174" r="9"></circle><circle cx="250" cy="178" r="9"></circle><circle cx="330" cy="38" r="9"></circle></g><g fill="var(--ink)" font-size="13" font-weight="800"><text x="60" y="201">柳州站</text><text x="215" y="207">酒店</text><text x="346" y="43">胜利烧烤城</text></g><text x="16" y="22" fill="var(--muted)" font-size="11">北 ↑ · 按高德经纬度等比例定位</text></svg></div><div class="actions"><a class="button primary" data-multipoints="1" href="https://uri.amap.com/marker?markers=109.388016%2C24.308107%2C%E6%9F%B3%E5%B7%9E%E7%AB%99%7C109.3982%2C24.3071%2C%E7%BB%B4%E4%B9%9F%E7%BA%B3%E9%85%92%E5%BA%97%7C109.403153%2C24.35605%2C%E8%83%9C%E5%88%A9%E7%83%A7%E7%83%A4%E5%9F%8E&amp;src=liuzhou-guide&amp;callnative=1">在高德打开全天标准点位</a></div></div></details>
       <ol class="timeline">
-        <li><div class="time">21:15</div><div class="event"><h4>G3742抵达柳州站</h4><p>预计21:25左右出站。先在线联系酒店说明会晚于22:00到店，再去寻找电动车。</p><a href="https://uri.amap.com/marker?position=109.388016,24.308107&name=柳州站&src=liuzhou-guide&callnative=1">高德查看柳州站</a></div></li>
-        <li><div class="time">21:25</div><div class="event"><h4>现场租两台电动车</h4><p>最多找车30分钟。确认门店9月27日中午可还车，并拍清划痕、电量、车牌与还车位置；22:00仍没车就直接打车去酒店。</p><a href="https://uri.amap.com/search?keyword=电动车租赁&center=109.388016,24.308107&city=柳州&view=map&src=liuzhou-guide&callnative=1">高德搜索附近租车</a></div></li>
-        <li><div class="time">22:15</div><div class="event"><h4>维也纳酒店办理入住</h4><p>这是预计时间，必须提前让酒店保留房间。大行李箱不要放电动车脚踏；必要时一人打车带行李。</p><a href="https://uri.amap.com/search?keyword=维也纳酒店柳州高铁站谷埠街店&city=柳州&view=map&src=liuzhou-guide&callnative=1">高德搜索酒店</a></div></li>
-        <li><div class="time">22:50</div><div class="event"><h4>胜利烧烤城主餐</h4><p>姐妹老店炒鸭脚＋小份炒螺蛳粉；叮当炒冰点牛油果芒果双拼。有余量再加现切宜州果酱烧烤。</p><a href="https://uri.amap.com/navigation?from=109.3982,24.3071,维也纳酒店&to=109.403153,24.356050,胜利烧烤城&mode=ride&src=liuzhou-guide&callnative=1">打开骑行导航</a></div></li>
+        <li><div class="time">21:15</div><div class="event"><h4>G3742抵达柳州站</h4><p>预计21:25左右出站。先在线联系酒店说明会晚于22:00到店，再去寻找电动车。</p><a href="https://uri.amap.com/marker?position=109.388016,24.308107&amp;name=柳州站&amp;src=liuzhou-guide&amp;callnative=1">高德查看柳州站</a></div></li>
+        <li><div class="time">21:25</div><div class="event"><h4>现场租两台电动车</h4><p>最多找车30分钟。确认门店9月27日中午可还车，并拍清划痕、电量、车牌与还车位置；22:00仍没车就直接打车去酒店。</p><a href="https://uri.amap.com/search?keyword=电动车租赁&amp;center=109.388016,24.308107&amp;city=柳州&amp;view=map&amp;src=liuzhou-guide&amp;callnative=1">高德搜索附近租车</a></div></li>
+        <li><div class="time">22:15</div><div class="event"><h4>维也纳酒店办理入住</h4><p>这是预计时间，必须提前让酒店保留房间。大行李箱不要放电动车脚踏；必要时一人打车带行李。</p><a href="https://uri.amap.com/search?keyword=维也纳酒店柳州高铁站谷埠街店&amp;city=柳州&amp;view=map&amp;src=liuzhou-guide&amp;callnative=1">高德搜索酒店</a></div></li>
+        <li><div class="time">22:50</div><div class="event"><h4>胜利烧烤城主餐</h4><p>小卢炒螺点小份炒螺蛳粉，炒鸭脚或炒田螺二选一；配四季豆浆。仍有胃口再买一杯叮当炒冰。</p><a href="https://uri.amap.com/navigation?from=109.3982,24.3071,维也纳酒店&amp;to=109.403153,24.356050,胜利烧烤城&amp;mode=ride&amp;src=liuzhou-guide&amp;callnative=1">打开骑行导航</a></div></li>
         <li><div class="time">01:20</div><div class="event"><h4>返回酒店</h4><p>不要酒后骑车，计划02:00前休息。</p></div></li>
       </ol>
     </article>
 
     <article class="card day" style="margin-top:18px">
-      <header><h3>Day 2 · 完整逛吃日</h3><div class="sub">9月26日 周六｜青云尾场 → 文庙 → 五星街 → 风情港</div></header>
-      <details class="route"><summary>展开当日路线地图 <span>⌄</span></summary><div class="route-content"><div class="mapbox"><svg viewBox="0 0 700 210"><path d="M54 150 C150 80 220 170 300 104 S450 55 635 112" fill="none" stroke="var(--green)" stroke-width="8" stroke-linecap="round"/><g fill="var(--paper)" stroke="var(--green)" stroke-width="5"><circle cx="54" cy="150" r="11"/><circle cx="228" cy="125" r="11"/><circle cx="635" cy="112" r="11"/><circle cx="430" cy="100" r="11"/><circle cx="475" cy="158" r="11"/></g><g fill="var(--ink)" font-size="13" font-weight="700"><text x="24" y="184">酒店</text><text x="188" y="158">青云市场</text><text x="605" y="146">文庙</text><text x="398" y="82">五星街</text><text x="450" y="192">风情港</text></g></svg></div><div class="actions"><a class="button primary" data-multipoints="2" href="#">在高德打开全天点位</a></div></div></details>
+      <header><h3>Day 2 · 完整逛吃日</h3><div class="sub">9月26日 周六｜青云尾场 → 龙潭公园 → 五星街 → 风情港</div></header>
+      <details class="route"><summary>展开真实位置图 <span>⌄</span></summary><div class="route-content"><div class="mapbox"><svg viewBox="0 0 700 235" role="img" aria-label="第二天真实经纬度路线"><defs><pattern id="d2grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="var(--line)" opacity=".6"></path></pattern></defs><rect width="700" height="235" fill="url(#d2grid)"></rect><path d="M80 78 L260 66 L560 202 L404 72 L420 85 L80 78" fill="none" stroke="var(--green)" stroke-width="6" stroke-linejoin="round"></path><g fill="var(--paper)" stroke="var(--green)" stroke-width="4"><circle cx="80" cy="78" r="9"></circle><circle cx="260" cy="66" r="9"></circle><circle cx="560" cy="202" r="9"></circle><circle cx="404" cy="72" r="9"></circle><circle cx="420" cy="85" r="9"></circle></g><g fill="var(--ink)" font-size="13" font-weight="800"><text x="50" y="108">酒店</text><text x="220" y="48">青云市场</text><text x="575" y="207">龙潭公园</text><text x="375" y="52">五星街</text><text x="428" y="103">风情港</text></g><text x="16" y="22" fill="var(--muted)" font-size="11">北 ↑ · 按高德经纬度等比例定位，折线只表示游玩顺序</text></svg></div><div class="actions"><a class="button primary" data-multipoints="2" href="https://uri.amap.com/marker?markers=109.3982%2C24.3071%2C%E7%BB%B4%E4%B9%9F%E7%BA%B3%E9%85%92%E5%BA%97%7C109.408988%2C24.311663%2C%E9%9D%92%E4%BA%91%E6%B0%91%E7%94%9F%E5%B8%82%E5%9C%BA%7C109.415053%2C24.27671%2C%E6%9F%B3%E5%B7%9E%E9%BE%99%E6%BD%AD%E5%85%AC%E5%9B%AD%7C109.413192%2C24.310143%2C%E4%BA%94%E6%98%9F%E5%95%86%E4%B8%9A%E6%AD%A5%E8%A1%8C%E8%A1%97%7C109.4144%2C24.3077%2C%E9%A3%8E%E6%83%85%E6%B8%AF&amp;src=liuzhou-guide&amp;callnative=1">在高德打开全天标准点位</a></div></div></details>
       <ol class="timeline">
         <li><div class="time">11:00</div><div class="event"><h4>起床洗漱</h4><p>11:20出发，电动车停在青云市场外围。</p></div></li>
-        <li><div class="time">11:35</div><div class="event"><h4>青云民生市场尾场</h4><p>依次找张记玉米汁、潘姐粉饺、桂姐粉蒸肉糯米饭、香滑芝麻糊；符老三仍营业再加露水汤圆。</p><a href="https://uri.amap.com/navigation?from=109.3982,24.3071,维也纳酒店&to=109.408988,24.311663,青云民生市场&mode=ride&src=liuzhou-guide&callnative=1">打开骑行导航</a></div></li>
-        <li><div class="time">12:35</div><div class="event"><h4>柳州文庙＋蟠龙山脚</h4><p>不爬山，只走文庙、泮池与瀑布广场。节假日开放时间需出发前复核。</p><a href="https://uri.amap.com/navigation?from=109.408988,24.311663,青云民生市场&to=109.422541,24.308558,柳州文庙&mode=ride&src=liuzhou-guide&callnative=1">打开骑行导航</a></div></li>
-        <li><div class="time">15:30</div><div class="event"><h4>五星街茶麸洗头</h4><p>预留60–90分钟。先看毛巾、洗头床和工具是否一客一换，再决定套餐；第一次选普通茶麸或微辣姜洗。</p><a href="https://uri.amap.com/search?keyword=五星街茶麸洗头&center=109.413192,24.310143&city=柳州&view=map&src=liuzhou-guide&callnative=1">高德查看附近店铺</a></div></li>
-        <li><div class="time">17:00</div><div class="event"><h4>五星街＋金鱼巷逛吃</h4><p>主食二选一：六品坊招牌汤粉或大华干捞粉；再分食张飞椰奶木薯羹、点都得蜜汁鸭腿和一份螺蛳臭豆腐。</p><a href="https://uri.amap.com/marker?position=109.413192,24.310143&name=五星商业步行街&src=liuzhou-guide&callnative=1">高德查看五星街</a></div></li>
-        <li><div class="time">20:00</div><div class="event"><h4>风情港看音乐喷泉</h4><p>常规场次约20:00、21:00，各约15分钟；中秋当晚以现场公告为准。</p><a href="https://uri.amap.com/search?keyword=柳江音乐喷泉&center=109.4144,24.3077&city=柳州&view=map&src=liuzhou-guide&callnative=1">高德查看喷泉</a></div></li>
-        <li><div class="time">22:30</div><div class="event"><h4>可选：蒙记深夜豆浆</h4><p>只有重新饿了才去，点半糖豆浆＋蛋散；已经吃饱就留在五星街散步。</p><a href="https://uri.amap.com/search?keyword=蒙记深夜豆浆&city=柳州&view=map&src=liuzhou-guide&callnative=1">高德搜索蒙记</a></div></li>
+        <li><div class="time">11:35</div><div class="event"><h4>青云民生市场尾场</h4><p>先买张记玉米汁；桂姐小吃在糯米饭与露水汤圆中二选一，再选十八婶芝麻花生糊或杨嫂三拼豆花。</p><a href="https://uri.amap.com/navigation?from=109.3982,24.3071,维也纳酒店&amp;to=109.408988,24.311663,青云民生市场&amp;mode=ride&amp;src=liuzhou-guide&amp;callnative=1">打开骑行导航</a></div></li>
+        <li><div class="time">12:25</div><div class="event"><h4>骑往龙潭公园</h4><p>青云市场到龙潭公园北门约5公里，电动车预留25分钟；公园门口规范停车，不骑入园内。</p><a href="https://uri.amap.com/navigation?from=109.408988,24.311663,青云民生市场&amp;to=109.415053,24.276710,柳州龙潭公园&amp;mode=ride&amp;src=liuzhou-guide&amp;callnative=1">打开骑行导航</a></div></li><li><div class="time">12:50</div><div class="event"><h4>龙潭公园 · 2小时轻量环线</h4><p>免费、日常06:30–22:30开放。走镜湖 → 风雨桥 → 雷潭水边 → 侗寨一带，不登山；15:00前往北门取车。</p><a href="https://uri.amap.com/marker?position=109.415053,24.276710&amp;name=柳州龙潭公园&amp;src=liuzhou-guide&amp;callnative=1">高德标准位置</a></div></li>
+        <li><div class="time">15:30</div><div class="event"><h4>五星街茶麸洗头</h4><p>预留60–90分钟。先看毛巾、洗头床和工具是否一客一换，再决定套餐；第一次选普通茶麸或微辣姜洗。</p><a href="https://uri.amap.com/search?keyword=五星街茶麸洗头&amp;center=109.413192,24.310143&amp;city=柳州&amp;view=map&amp;src=liuzhou-guide&amp;callnative=1">高德查看附近店铺</a></div></li>
+        <li><div class="time">17:00</div><div class="event"><h4>五星街＋金鱼巷逛吃</h4><p>主食吃文惠桥头大华干捞粉；再分食杨姐酸嘢、木薯糖水和金团子糯米糍。不安排跨城常见连锁小吃。</p><a href="https://uri.amap.com/marker?position=109.413192,24.310143&amp;name=五星商业步行街&amp;src=liuzhou-guide&amp;callnative=1">高德查看五星街</a></div></li>
+        <li><div class="time">20:00</div><div class="event"><h4>风情港看音乐喷泉</h4><p>常规场次约20:00、21:00，各约15分钟；中秋当晚以现场公告为准。</p><a href="https://uri.amap.com/search?keyword=柳江音乐喷泉&amp;center=109.4144,24.3077&amp;city=柳州&amp;view=map&amp;src=liuzhou-guide&amp;callnative=1">高德查看喷泉</a></div></li>
+        <li><div class="time">22:30</div><div class="event"><h4>可选：蒙记深夜豆浆</h4><p>只有重新饿了才去，点半糖豆浆＋蛋散；已经吃饱就留在五星街散步。</p><a href="https://uri.amap.com/search?keyword=蒙记深夜豆浆&amp;city=柳州&amp;view=map&amp;src=liuzhou-guide&amp;callnative=1">高德搜索蒙记</a></div></li>
         <li><div class="time">00:30</div><div class="event"><h4>骑回酒店</h4><p>不二刷胜利烧烤城，减少重复路程。</p></div></li>
       </ol>
     </article>
 
     <article class="card day" style="margin-top:18px">
       <header><h3>Day 3 · 返程日</h3><div class="sub">9月27日 周日｜谷埠街 → 酒店 → 还车 → 柳州站</div></header>
-      <details class="route"><summary>展开当日路线地图 <span>⌄</span></summary><div class="route-content"><div class="mapbox"><svg viewBox="0 0 700 175"><path d="M90 94 C210 33 295 137 390 89 S550 51 620 84" fill="none" stroke="var(--blue)" stroke-width="8" stroke-linecap="round"/><g fill="var(--paper)" stroke="var(--blue)" stroke-width="5"><circle cx="90" cy="94" r="11"/><circle cx="275" cy="103" r="11"/><circle cx="430" cy="82" r="11"/><circle cx="620" cy="84" r="11"/></g><g fill="var(--ink)" font-size="13" font-weight="700"><text x="53" y="130">酒店</text><text x="236" y="139">谷埠街</text><text x="390" y="55">取还车点</text><text x="585" y="120">柳州站</text></g></svg></div><div class="actions"><a class="button primary" data-multipoints="3" href="#">在高德打开全天点位</a></div></div></details>
+      <details class="route"><summary>展开真实位置图 <span>⌄</span></summary><div class="route-content"><div class="mapbox"><svg viewBox="0 0 700 175" role="img" aria-label="返程日真实经纬度路线"><defs><pattern id="d3grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="var(--line)" opacity=".6"></path></pattern></defs><rect width="700" height="175" fill="url(#d3grid)"></rect><path d="M245 91 L420 111 L90 86" fill="none" stroke="var(--blue)" stroke-width="6"></path><g fill="var(--paper)" stroke="var(--blue)" stroke-width="4"><circle cx="245" cy="91" r="9"></circle><circle cx="420" cy="111" r="9"></circle><circle cx="90" cy="86" r="9"></circle></g><g fill="var(--ink)" font-size="13" font-weight="800"><text x="212" y="122">酒店</text><text x="388" y="143">谷埠街</text><text x="51" y="117">柳州站</text></g><text x="16" y="22" fill="var(--muted)" font-size="11">北 ↑ · 按高德经纬度等比例定位</text></svg></div><div class="actions"><a class="button primary" data-multipoints="3" href="https://uri.amap.com/marker?markers=109.3982%2C24.3071%2C%E7%BB%B4%E4%B9%9F%E7%BA%B3%E9%85%92%E5%BA%97%7C109.40837%2C24.30421%2C%E8%B0%B7%E5%9F%A0%E8%A1%97%7C109.39%2C24.309%2C%E5%8F%96%E8%BF%98%E8%BD%A6%E7%82%B9%7C109.388016%2C24.308107%2C%E6%9F%B3%E5%B7%9E%E7%AB%99&amp;src=liuzhou-guide&amp;callnative=1">在高德打开全天标准点位</a></div></div></details>
       <ol class="timeline">
         <li><div class="time">10:00</div><div class="event"><h4>起床、收拾行李</h4><p>先退房并寄存行李，避免超过酒店退房时间。</p></div></li>
-        <li><div class="time">10:45</div><div class="event"><h4>谷埠街收尾粉</h4><p>原谷埠街老字号粉店吃鲜肉粉，附近补一碗豆花；想买袋装螺蛳粉就在这里解决。</p><a href="https://uri.amap.com/marker?position=109.408370,24.304210&name=谷埠街国际商城&src=liuzhou-guide&callnative=1">高德查看谷埠街</a></div></li>
+        <li><div class="time">10:45</div><div class="event"><h4>谷埠街收尾粉</h4><p>原谷埠街老字号粉店吃鲜肉粉，附近补一碗豆花；想买袋装螺蛳粉就在这里解决。</p><a href="https://uri.amap.com/marker?position=109.408370,24.304210&amp;name=谷埠街国际商城&amp;src=liuzhou-guide&amp;callnative=1">高德查看谷埠街</a></div></li>
         <li><div class="time">11:40</div><div class="event"><h4>回酒店取行李</h4><p>检查充电器、证件与伴手礼。</p></div></li>
         <li><div class="time">12:00</div><div class="event"><h4>原门店归还两台电动车</h4><p>拍还车照片，确认押金退还规则。门店位置收到订单截图后补齐。</p></div></li>
         <li><div class="time">12:30</div><div class="event"><h4>进入柳州站候车</h4><p>D3757于13:47发车；中秋客流大，不建议再压缩进站时间。</p></div></li>
@@ -175,7 +184,7 @@ main{display:grid;gap:18px;padding-bottom:68px}.card{background:var(--paper);bor
     </article>
   </section>
 
-  <section class="card" aria-labelledby="todo-title"><div class="section-head"><h2 id="todo-title">出发前待办</h2><p>完成后告诉我，我直接更新网页</p></div><ul class="todo"><li><strong>现在联系酒店：</strong>说明G3742于21:15到柳州，预计22:15左右到店，请确认保留房间</li><li>提前保存柳州站附近2家营业到22:00后的电动车租赁门店；现场无车时直接打车</li><li>确认租车门店9月27日12:00前后可以还车，以及押金、续航和头盔数量</li><li>出发前7天核对柳州文庙中秋开放与预约政策</li><li>出发前2天查看柳州天气，雨天取消电动车方案</li><li>确认两人行李能否安全携带；大箱子安排一人打车带去酒店</li><li>提前熟悉广州南站便捷换乘标志，避免25分钟换乘失误</li><li>保存本页离线版并转发同行人</li></ul></section>
+  <section class="card" aria-labelledby="todo-title"><div class="section-head"><h2 id="todo-title">出发前待办</h2><p>完成后告诉我，我直接更新网页</p></div><ul class="todo"><li><strong>现在联系酒店：</strong>说明G3742于21:15到柳州，预计22:15左右到店，请确认保留房间</li><li>提前保存柳州站附近2家营业到22:00后的电动车租赁门店；现场无车时直接打车</li><li>确认租车门店9月27日12:00前后可以还车，以及押金、续航和头盔数量</li><li>出发前2天核对龙潭公园中秋开放、活动与出入口调整；日常开放时间为06:30–22:30</li><li>出发前2天查看柳州天气，雨天取消电动车方案</li><li>确认两人行李能否安全携带；大箱子安排一人打车带去酒店</li><li>提前熟悉广州南站便捷换乘标志，避免25分钟换乘失误</li><li>保存本页离线版并转发同行人</li></ul></section>
 
   <section class="card" aria-labelledby="tips-title"><div class="section-head"><h2 id="tips-title">实用贴士</h2><p>按你晚起晚睡的节奏</p></div><div class="tips"><div class="tip"><span class="n">1</span><div><b>青云市场是尾场，不是标准早场</b><p>公开营业时间约06:00–12:00。小红书有11点仍能吃到多数摊位的实测，但中秋热门食品可能提前售罄。</p></div></div><div class="tip"><span class="n">2</span><div><b>高德的多点骑行有限制</b><p>全天按钮打开全部点位；真正导航请逐段点击。高德公开骑行URI不支持多个途经点。</p></div></div><div class="tip"><span class="n">3</span><div><b>电动车与大行李不要硬凑</b><p>大箱子不能挂车把或堆脚踏。雨天、饮酒后和江边湿滑路段直接打车。</p></div></div><div class="tip"><span class="n">4</span><div><b>公开页面只放必要信息</b><p>订单截图中的手机号、证件号、订单号、房间号会自动忽略。</p></div></div></div><div class="footer-actions"><button class="button primary" id="downloadPage" type="button">保存单文件离线版</button></div><div class="privacy">本页不收集数据，不保存勾选状态，不加载第三方脚本。</div></section>
 </main>
@@ -189,7 +198,8 @@ const events=[
   {at:'2026-09-25T22:50:00+08:00',title:'胜利烧烤城宵夜'},
   {at:'2026-09-26T11:00:00+08:00',title:'起床 · 准备赶青云尾场'},
   {at:'2026-09-26T11:35:00+08:00',title:'青云民生市场逛吃'},
-  {at:'2026-09-26T12:35:00+08:00',title:'柳州文庙与蟠龙山脚'},
+  {at:'2026-09-26T12:25:00+08:00',title:'骑往龙潭公园'},
+  {at:'2026-09-26T12:50:00+08:00',title:'龙潭公园轻量环线'},
   {at:'2026-09-26T15:30:00+08:00',title:'五星街茶麸洗头'},
   {at:'2026-09-26T17:00:00+08:00',title:'五星街与金鱼巷逛吃'},
   {at:'2026-09-26T20:00:00+08:00',title:'风情港音乐喷泉'},
@@ -215,12 +225,14 @@ function liuzhouHour(){const parts=new Intl.DateTimeFormat('en-US',{timeZone:TZ,
 function setTheme(){const h=liuzhouHour();document.documentElement.dataset.theme=(h>=18||h<6)?'night':'day';document.querySelector('meta[name="theme-color"]').content=(h>=18||h<6)?'#101b20':'#f5efe2'}
 const points={
   1:[[109.388016,24.308107,'柳州站'],[109.3982,24.3071,'维也纳酒店'],[109.403153,24.356050,'胜利烧烤城']],
-  2:[[109.3982,24.3071,'维也纳酒店'],[109.408988,24.311663,'青云民生市场'],[109.422541,24.308558,'柳州文庙'],[109.413192,24.310143,'五星商业步行街'],[109.4144,24.3077,'风情港']],
+  2:[[109.3982,24.3071,'维也纳酒店'],[109.408988,24.311663,'青云民生市场'],[109.415053,24.276710,'柳州龙潭公园'],[109.413192,24.310143,'五星商业步行街'],[109.4144,24.3077,'风情港']],
   3:[[109.3982,24.3071,'维也纳酒店'],[109.408370,24.304210,'谷埠街'],[109.3900,24.3090,'取还车点'],[109.388016,24.308107,'柳州站']]
 };
 document.querySelectorAll('[data-multipoints]').forEach(a=>{const list=points[a.dataset.multipoints].map(p=>p.join(',')).join('|');a.href='https://uri.amap.com/marker?markers='+encodeURIComponent(list)+'&src=liuzhou-guide&callnative=1'});
 document.getElementById('downloadPage').addEventListener('click',()=>{const html='<!doctype html>\n'+document.documentElement.outerHTML;const blob=new Blob([html],{type:'text/html;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='柳州旅行手册-2026中秋.html';a.click();setTimeout(()=>URL.revokeObjectURL(url),1500)});
 setTheme();updateCountdown();setInterval(updateCountdown,1000);setInterval(setTheme,60000);
 </script>
-</body>
-</html>
+
+
+
+</body><div id="codex-browser-sidebar-comments-root" style="position: fixed; inset: 0px; pointer-events: none; z-index: 2147483647;"></div></html>
